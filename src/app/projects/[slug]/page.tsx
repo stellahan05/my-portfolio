@@ -1,13 +1,22 @@
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';
 import Link from 'next/link';
+import Image from 'next/image';
 
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
-  const project = projects.find(p => p.slug === params.slug);
+type Props = {
+  params: Promise<{
+    slug: string;
+  }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
-  if (!project) {
+export default async function ProjectDetail({ params }: Props) { 
+const resolvedParams = await params;
+const project = projects.find(p => p.slug === resolvedParams?.slug);
+
+if (!project) {
     notFound();
-  }
+}
 
   return (
     <main className="flex flex-col items-center justify-center p-8 animate-fadeIn">
@@ -19,7 +28,16 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
       </div>
 
         {/* Project Content */}
-      <img src={project.imageUrl} alt={project.title} className="w-full max-w-3xl object-cover rounded-lg mb-8" />
+      <div className="w-full max-w-3xl mb-6">
+        <Image 
+          src={project.imageUrl} 
+          alt={project.title} 
+          width={1200}
+          height={600}
+          className="w-full max-w-3xl object-cover rounded-lg mb-8"
+          priority
+        />
+      </div>
       <h1 className="text-5xl font-bold mb-4">{project.title}</h1>
 
       <p className="text-gray-700 text-lg mb-6 text-center max-w-2xl">{project.fullDescription}</p>
@@ -57,3 +75,9 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
     </main>
   );
 }
+
+export async function generateStaticParams() {
+    return projects.map((project) => ({
+      slug: project.slug,
+    }));
+  }
