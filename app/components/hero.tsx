@@ -19,7 +19,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
           >
-            Hi, I'm{' '}
+            Hi, I&apos;m{' '}
             <span className="text-blue-600">Stella Han</span>
           </motion.h1>
           
@@ -29,7 +29,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto"
           >
-            Machine Learning Engineer passionate about using data to answer your greatest questions. I love working with modern technologies and uncovering life's
+            Machine Learning Engineer passionate about using data to answer your greatest questions. I love working with modern technologies and uncovering life&apos;s
             mysteries through data.
           </motion.p>
 
