@@ -29,8 +29,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto"
           >
-            Machine Learning Engineer passionate about using data to answer your greatest questions. I love working with modern technologies and uncovering life&apos;s
-            mysteries through data.
+            I analyze, I build, I learn.
           </motion.p>
 
           <motion.div
@@ -78,19 +77,20 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-wrap justify-center gap-4 text-sm text-gray-600"
           >
+            <span className="bg-white px-3 py-1 rounded-full">Python</span>
+            <span className="bg-white px-3 py-1 rounded-full">C++</span>
             <span className="bg-white px-3 py-1 rounded-full">React</span>
             <span className="bg-white px-3 py-1 rounded-full">Next.js</span>
             <span className="bg-white px-3 py-1 rounded-full">TypeScript</span>
             <span className="bg-white px-3 py-1 rounded-full">Node.js</span>
-            <span className="bg-white px-3 py-1 rounded-full">Python</span>
             <span className="bg-white px-3 py-1 rounded-full">PostgreSQL</span>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

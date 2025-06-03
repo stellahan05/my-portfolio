@@ -1,59 +1,44 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, MapPin } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 
 const experiences = [
   {
-    title: "Senior Full Stack Developer",
-    company: "Tech Company Inc.",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
+    title: "Machine Learning Engineer / Data Analyst",
+    company: "National Research Council Canada",
+    period: "May 2025 - Present",
     description: [
       "Led development of a customer-facing web application serving 100k+ users",
       "Implemented microservices architecture reducing system response time by 40%",
       "Mentored junior developers and established coding standards for the team",
       "Collaborated with product managers to define technical requirements"
     ],
-    technologies: ["React", "Node.js", "AWS", "PostgreSQL", "Docker"]
+    technologies: ["Python", "scikit-learn"]
   },
   {
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
-    location: "Remote",
-    period: "2020 - 2022",
+    title: "Quantitative Developer",
+    company: "UBC Quantico Research",
+    period: "Jan 2025 - Present",
     description: [
       "Built and maintained multiple client projects using modern web technologies",
       "Developed RESTful APIs and integrated third-party services",
       "Optimized application performance and implemented automated testing",
       "Worked directly with clients to gather requirements and provide solutions"
     ],
-    technologies: ["Vue.js", "Django", "Python", "MySQL", "GCP"]
-  },
-  {
-    title: "Junior Web Developer",
-    company: "Digital Agency",
-    location: "New York, NY",
-    period: "2019 - 2020",
-    description: [
-      "Created responsive websites and web applications for various clients",
-      "Collaborated with designers to implement pixel-perfect UI designs",
-      "Maintained and updated existing client websites",
-      "Participated in code reviews and team development processes"
-    ],
-    technologies: ["JavaScript", "PHP", "WordPress", "HTML/CSS", "jQuery"]
+    technologies: ["Python", "tensorflow"]
   }
 ]
 
-const education = [
-  {
-    degree: "Bachelor of Science in Computer Science",
-    school: "University of Technology",
-    location: "Boston, MA",
-    period: "2015 - 2019",
-    description: "Graduated Magna Cum Laude with focus on web development and software engineering"
-  }
-]
+// const education = [
+//   {
+//     degree: "Bachelor of Science in Computer Science",
+//     school: "University of Technology",
+//     location: "Boston, MA",
+//     period: "2015 - 2019",
+//     description: "Graduated Magna Cum Laude with focus on web development and software engineering"
+//   }
+// ]
 
 export default function Experience() {
   return (
@@ -67,15 +52,15 @@ export default function Experience() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Experience & Education
+            Experience
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            My professional journey and educational background in software development.
+            Collaborating, building, and learning along the way.
           </p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
-          {/* Work Experience */}
+          {/* Experience */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +68,6 @@ export default function Experience() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Work Experience</h3>
             
             <div className="space-y-8">
               {experiences.map((exp, index) => (
@@ -106,10 +90,10 @@ export default function Experience() {
                         <Calendar size={16} />
                         <span>{exp.period}</span>
                       </div>
-                      <div className="flex items-center gap-1">
+                      {/* <div className="flex items-center gap-1">
                         <MapPin size={16} />
                         <span>{exp.location}</span>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   
@@ -134,7 +118,9 @@ export default function Experience() {
             </div>
           </motion.div>
 
-          {/* Education */}
+
+
+          {/* Education
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -175,7 +161,10 @@ export default function Experience() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
+
+
+
         </div>
       </div>
     </section>

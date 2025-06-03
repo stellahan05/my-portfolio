@@ -5,28 +5,19 @@ import { Github, ExternalLink } from 'lucide-react'
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution built with Next.js, Stripe, and PostgreSQL. Features include user authentication, product management, shopping cart, and payment processing.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Tailwind CSS"],
-    github: "https://github.com/yourusername/ecommerce",
-    live: "https://your-ecommerce.vercel.app",
-    image: "/api/placeholder/400/300"
+    title: "SentiMarket",
+    description: "SentiMarket is a machine learning project that analyzes public sentiment towards stocks. It scrapes Reddit finance discussions and uses NLP and RandomForest models to predict stock movements. Built for traders and analysts.",
+    tech: ['Python', 'Scikit-Learn', 'VADER', 'Yahoo Finance API', 'Docker'],
+    github: "https://github.com/stellahan05/sentimarket",
+    live: "https://sentimarket.streamlit.app",
+    image: "/images/sentimarket.png"
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates using Socket.io. Users can create projects, assign tasks, and track progress with team members.",
-    tech: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
-    github: "https://github.com/yourusername/taskmanager",
-    live: "https://your-taskmanager.vercel.app",
-    image: "/api/placeholder/400/300"
-  },
-  {
-    title: "Weather Dashboard",
-    description: "A responsive weather dashboard that displays current conditions and forecasts using OpenWeatherMap API. Features location-based weather and beautiful data visualizations.",
-    tech: ["React", "TypeScript", "Chart.js", "OpenWeatherMap API"],
-    github: "https://github.com/yourusername/weather-dashboard",
-    live: "https://your-weather.vercel.app",
-    image: "/api/placeholder/400/300"
+    title: "StrideSync — HelloHacks 2024 1st Place Winner",
+    description: "StrideSync generates playlists that match your running pace. It analyzes song BPMs and suggests the perfect tracks. Designed for runners who want to stay motivated without manually filtering songs.",
+    tech: ['React', 'Node.js', 'Express', 'Spotify API'],
+    github: "https://github.com/stellahan05/stride",
+    image: "/images/stridesync.png"
   }
 ]
 
@@ -42,11 +33,10 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Featured Projects
+            Projects
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills in web development,
-            from full-stack applications to interactive user interfaces.
+            Here&apos;s a glimpse into some projects I&apos;ve been working on.
           </p>
         </motion.div>
 
@@ -60,7 +50,14 @@ export default function Projects() {
               viewport={{ once: true }}
               className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500"></div>
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+              )}
+
               
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -90,9 +87,10 @@ export default function Projects() {
                     className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
                   >
                     <Github size={18} />
-                    Code
+                    {/* Code */}
                   </a>
                   
+                  {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
@@ -100,8 +98,8 @@ export default function Projects() {
                     className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors"
                   >
                     <ExternalLink size={18} />
-                    Live Demo
                   </a>
+                )}
                 </div>
               </div>
             </motion.div>
