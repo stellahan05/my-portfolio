@@ -6,11 +6,18 @@ import { Github, ExternalLink } from 'lucide-react'
 const projects = [
   {
     title: "SentiMarket",
-    description: "SentiMarket is a machine learning project that analyzes public sentiment towards stocks. It scrapes Reddit finance discussions and uses NLP and RandomForest models to predict stock movements. Built for traders and analysts.",
+    description: "SentiMarket is a machine learning dashboard that analyzes public sentiment towards stocks. It scrapes Reddit finance discussions and uses NLP and RandomForest models to predict stock movements. Built for traders and analysts.",
     tech: ['Python', 'Scikit-Learn', 'VADER', 'Yahoo Finance API', 'Docker'],
     github: "https://github.com/stellahan05/sentimarket",
     live: "https://sentimarket.streamlit.app",
     image: "/images/sentimarket.png"
+  },
+  {
+    title: "CareBot",
+    description: "CareBot is a healthcare chatbot that provides personalized health advice and resources. It uses NLP to understand user queries and offers relevant information. Designed to assist users in managing their health effectively.",
+    tech: ['Next.js', 'React', 'Node.js', 'OpenAI API', 'Firebase'],
+    github: "https://github.com/stellahan05/carebot",
+    image: "/images/carebot.png"
   },
   {
     title: "StrideSync — HelloHacks 2024 1st Place Winner",
