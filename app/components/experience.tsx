@@ -9,10 +9,7 @@ const experiences = [
     company: "National Research Council Canada",
     period: "May 2025 - Present",
     description: [
-      "Led development of a customer-facing web application serving 100k+ users",
-      "Implemented microservices architecture reducing system response time by 40%",
-      "Mentored junior developers and established coding standards for the team",
-      "Collaborated with product managers to define technical requirements"
+      "hehe"
     ],
     technologies: ["Python", "scikit-learn"]
   },
@@ -21,10 +18,9 @@ const experiences = [
     company: "UBC Quantico Research",
     period: "Jan 2025 - Present",
     description: [
-      "Built and maintained multiple client projects using modern web technologies",
-      "Developed RESTful APIs and integrated third-party services",
-      "Optimized application performance and implemented automated testing",
-      "Worked directly with clients to gather requirements and provide solutions"
+      "Developing and optimizing algorithmic trading models using Python and TensorFlow, incorporating supervised learning, time series forecasting, and deep learning techniques like LSTMs to predict market trends",
+      "Conducting data-driven research to enhance investment strategies by applying statistical analysis, feature engineering, and model tuning with tools like scikit-learn, NumPy, and pandas",
+      "Automating data pipelines for large-scale financial data analysis and validating model performance through backtesting, focusing on performance metrics such as Sharpe ratio and drawdown"
     ],
     technologies: ["Python", "tensorflow"]
   }

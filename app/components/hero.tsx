@@ -2,6 +2,7 @@
 
 import { Github, Linkedin, FileText, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -11,8 +12,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center"
+          className="text-center flex flex-col items-center"
         >
+          <Image
+            src="/images/bread.jpg"
+            alt="Stella Han"
+            width={160}
+            height={160}
+            className="rounded-full mb-6 shadow-lg"
+          />
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -20,7 +29,7 @@ export default function Hero() {
             className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
           >
             Hi, I&apos;m{' '}
-            <span className="text-blue-600">Stella Han</span>
+            <span className="text-blue-400">Stella Han</span>
           </motion.h1>
           
           <motion.p
