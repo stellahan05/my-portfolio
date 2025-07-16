@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Github, ExternalLink } from 'lucide-react'
+import Image from 'next/image'
 
 const projects = [
   {
@@ -58,10 +59,13 @@ export default function Projects() {
               className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
               {project.image && (
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  width={600}
+                  height={300}
                   className="w-full h-48 object-cover"
+                  style={{ objectFit: 'cover' }}
                 />
               )}
 
