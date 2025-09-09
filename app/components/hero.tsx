@@ -1,6 +1,6 @@
 'use client'
 
-import { Github, Linkedin, FileText, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Typewriter } from 'react-simple-typewriter'
 import Image from 'next/image'
@@ -59,7 +59,7 @@ export default function Hero() {
           </h2>
 
           <p className="text-gray-700 mb-6">
-            Sophomore at UBC passionate about building intelligent systems and data-driven solutions. I love turning complex problems into simple, beautiful tools.
+            Junior at UBC passionate about building intelligent systems and data-driven solutions. I love turning complex problems into simple, beautiful tools.
           </p>
 
           {/* Social Icons */}
@@ -84,7 +84,7 @@ export default function Hero() {
 
           {/* Action Buttons (Resume & Contact) */}
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-4">
-            <a
+            {/* <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -92,7 +92,7 @@ export default function Hero() {
               >
               <FileText size={18} />
               Resume
-            </a>
+            </a> */}
 
             <a
               href="mailto:stellahan0819@gmail.com"
