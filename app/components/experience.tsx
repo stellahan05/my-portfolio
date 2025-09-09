@@ -7,11 +7,12 @@ const experiences = [
   {
     title: "Machine Learning Engineer / Data Analyst",
     company: "National Research Council Canada",
-    period: "May 2025 - Present",
+    period: "May - Aug 2025",
     description: [
-      "Conducting exploratory data analysis and feature engineering on LIBS spectra and MidIR data from agricultural samples.",
-      "Applying machine learning models for material classification and compositional predictions to support high-throughput spectroscopy pipelines.",
-      "Building dashboards and code pipelines to assist experimental scientists with data-driven insights."
+      "Engineered a scalable ML pipeline to preprocess and analyze 190M+ structured & unstructured data points.",
+      "Trained and optimized ML models (PLSR, ANN, Extreme Learning Machine), achieving R² > 0.85.",
+      "Improved preprocessing code efficiency and modularity, reducing runtime by 70% and enabling scalable analysis.",
+      "Collaborated with cross-functional teams for integration of ML models into real-time decision-support device."
     ],
     technologies: ["Python", "scikit-learn", "pandas", "matplotlib"]
   },
