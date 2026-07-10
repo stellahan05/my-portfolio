@@ -43,9 +43,10 @@ export default function Hero() {
             <span className="text-blue-600 font-semibold">
               <Typewriter
                 words={[
-                  'data analyst',
+                  'data scientist',
                   'machine learning engineer',
-                  'UBC CS student',
+                  'software engineer',
+                  'UBC CS + Stats student',
                   'problem solver',
                 ]}
                 loop
@@ -59,7 +60,7 @@ export default function Hero() {
           </h2>
 
           <p className="text-gray-700 mb-6">
-            Junior at UBC passionate about building intelligent systems and data-driven solutions. I love turning complex problems into simple, beautiful tools.
+          I build intelligent systems by combining statistical thinking, software engineering, and curiosity.
           </p>
 
           {/* Social Icons */}

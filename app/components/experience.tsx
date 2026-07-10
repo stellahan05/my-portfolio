@@ -5,6 +5,28 @@ import { Calendar } from 'lucide-react'
 
 const experiences = [
   {
+    title: "Data Scientist Co-op",
+    company: "Insurance Corporation of British Columbia (ICBC)",
+    period: "May - Aug 2026",
+    description: [
+      "Improved fraud detection performance by 12% by architecting and implementing a graph analytics model in PySpark, enhancing automated risk scoring across 40K+ weekly insurance claims.",
+      "Reduced operational costs by $7M/ year by engineering scalable graph-based features that increased the efficiency of the Special Investigation Unit's fraud triage workflow.",
+      "Drove adoption of graph analytics within ICBC's fraud detection pipeline by presenting the business impact to SIU leadership, supporting deployment of the enhanced risk scoring model."
+    ],
+    technologies: ["PySpark", "scikit-learn", "pandas", "matplotlib"]
+  },
+  {
+    title: "Data Analyst Co-op",
+    company: "Insurance Corporation of British Columbia (ICBC)",
+    period: "Jan - Apr 2026",
+    description: [
+      "Accelerated reporting by engineering Spark SQL pipelines that transformed 100M+ financial and operational records into analysis-ready datasets.",
+      "Enabled data-driven decisions for 50+ business stakeholders by developing Tableau dashboards for automated KPI reporting and self-service analytics.",
+      "Reduced manual reporting effort by automating recurring analyses through reusable SQL workflows for reporting."
+    ],
+    technologies: ["Spark SQL", "Tableau"]
+  },
+  {
     title: "Machine Learning Engineer / Data Analyst",
     company: "National Research Council Canada",
     period: "May - Aug 2025",
