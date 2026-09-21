@@ -3,16 +3,16 @@
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Typewriter } from 'react-simple-typewriter'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="container mx-auto px-6 py-20 flex flex-col xl:flex-row-reverse items-center xl:items-center justify-center gap-12">
+      <div className="container mx-auto px-6 py-20 flex items-center justify-center">
 
 
         {/* RIGHT SIDE - PROFILE IMAGE */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -25,7 +25,7 @@ export default function Hero() {
             height={400}
             className="rounded-full shadow-xl object-cover"
           />
-        </motion.div>
+        </motion.div> */}
         
         {/* LEFT SIDE */}
         <motion.div
@@ -43,11 +43,11 @@ export default function Hero() {
             <span className="text-blue-600 font-semibold">
               <Typewriter
                 words={[
-                  'data scientist',
-                  'machine learning engineer',
-                  'software engineer',
                   'UBC CS + Stats student',
-                  'problem solver',
+                  'data scientist',
+                  'software engineer',
+                  'machine learning engineer'
+          
                 ]}
                 loop
                 cursor
