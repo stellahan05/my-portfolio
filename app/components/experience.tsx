@@ -1,145 +1,43 @@
-'use client'
+import { experiences } from '../data/experience'
 
-import { motion } from 'framer-motion'
-import { Calendar } from 'lucide-react'
-
-const experiences = [
-  {
-    title: "Data Scientist Co-op",
-    company: "Insurance Corporation of British Columbia (ICBC)",
-    period: "May - Aug 2026",
-    description: [
-      "Improved fraud detection performance by 12% by architecting and implementing a graph analytics model in PySpark, enhancing automated risk scoring across 40K+ weekly insurance claims.",
-      "Reduced operational costs by $7M/ year by engineering scalable graph-based features that increased the efficiency of the Special Investigation Unit's fraud triage workflow.",
-      "Drove adoption of graph analytics within ICBC's fraud detection pipeline by presenting the business impact to SIU leadership, supporting deployment of the enhanced risk scoring model."
-    ],
-    technologies: ["PySpark", "scikit-learn", "pandas", "matplotlib"]
-  },
-  {
-    title: "Data Analyst Co-op",
-    company: "Insurance Corporation of British Columbia (ICBC)",
-    period: "Jan - Apr 2026",
-    description: [
-      "Accelerated reporting by engineering Spark SQL pipelines that transformed 100M+ financial and operational records into analysis-ready datasets.",
-      "Enabled data-driven decisions for 50+ business stakeholders by developing Tableau dashboards for automated KPI reporting and self-service analytics.",
-      "Reduced manual reporting effort by automating recurring analyses through reusable SQL workflows for reporting."
-    ],
-    technologies: ["Spark SQL", "Tableau"]
-  },
-  {
-    title: "Machine Learning Engineer / Data Analyst",
-    company: "National Research Council Canada",
-    period: "May - Aug 2025",
-    description: [
-      "Engineered a scalable ML pipeline to preprocess and analyze 190M+ structured & unstructured data points.",
-      "Trained and optimized ML models (PLSR, ANN, Extreme Learning Machine), achieving R² > 0.85.",
-      "Improved preprocessing code efficiency and modularity, reducing runtime by 70% and enabling scalable analysis.",
-      "Collaborated with cross-functional teams for integration of ML models into real-time decision-support device."
-    ],
-    technologies: ["Python", "scikit-learn", "pandas", "matplotlib"]
-  },
-  {
-    title: "Quantitative Developer",
-    company: "UBC Quantico Research",
-    period: "Jan 2025 - Present",
-    description: [
-      "Developing and optimizing algorithmic trading models using Python and TensorFlow, incorporating supervised learning, time series forecasting, and deep learning techniques like LSTMs to predict market trends.",
-      "Conducting data-driven research to enhance investment strategies by applying statistical analysis, feature engineering, and model tuning with tools like scikit-learn, NumPy, and pandas.",
-      "Automating data pipelines for large-scale financial data analysis and validating model performance through backtesting, focusing on performance metrics such as Sharpe ratio and drawdown."
-    ],
-    technologies: ["Python", "TensorFlow", "NumPy", "pandas"]
-  }
-]
+const employers = experiences.reduce<{ company: string; roles: typeof experiences }[]>((groups, experience) => {
+  const employer = groups.find((group) => group.company === experience.company)
+  if (employer) employer.roles.push(experience)
+  else groups.push({ company: experience.company, roles: [experience] })
+  return groups
+}, [])
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Experience
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Collaborating, building, and learning along the way.
-          </p>
-        </motion.div>
-
-        <div className="relative max-w-3xl mx-auto flex">
-        <div className="relative w-8">
-          {/* Static vertical line */}
-          <div className="absolute left-1/2 top-0 w-1 h-full bg-blue-100 transform -translate-x-1/2" />
-
-          {/* Animated fill line */}
-          <motion.div
-            initial={{ height: 0 }}
-            whileInView={{ height: '100%' }}
-            transition={{ duration: 1.5, ease: 'easeInOut' }}
-            viewport={{ once: true }}
-            className="absolute left-1/2 top-0 w-1 bg-blue-500 origin-top transform -translate-x-1/2"
-          />
-          </div>
-
-          {/* Experience cards + dots */}
-          <div className="flex-1 space-y-16 pl-6">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={exp.title + exp.company}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.15 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                {/* Animated dot on timeline */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 300,
-                    damping: 20,
-                    delay: index * 0.1
-                  }}
-                  className="absolute left-[-3rem] top-2 w-4 h-4 bg-white border-4 border-blue-500 rounded-full z-10"                />
-
-                <div className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900">{exp.title}</h4>
-                      <p className="text-lg text-blue-600 font-medium">{exp.company}</p>
+    <section id="experience" className="content-section compact-experience" aria-labelledby="experience-heading">
+      <div className="page-container">
+        <div className="section-intro">
+          <h2 id="experience-heading" className="section-heading">Experience</h2>
+        </div>
+        <div className="experience-list">
+          {employers.map((employer, employerIndex) => (
+            <article key={employer.company} className="experience-employer" aria-labelledby={`experience-employer-${employerIndex}`}>
+              <h3 id={`experience-employer-${employerIndex}`} className="experience-company">{employer.company}</h3>
+              <div className="experience-roles">
+                {employer.roles.map((experience, roleIndex) => (
+                  <section key={experience.title} className="experience-row" aria-labelledby={`experience-role-${employerIndex}-${roleIndex}`}>
+                    <p className="experience-period">{experience.period}</p>
+                    <div className="experience-position">
+                      <h4 id={`experience-role-${employerIndex}-${roleIndex}`}>{experience.title}</h4>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-600 mt-2 md:mt-0">
-                      <Calendar size={16} />
-                      <span>{exp.period}</span>
+                    <div className="experience-contribution">
+                      <p>{experience.summary}</p>
+                      {experience.relatedProjectId && (
+                        <a href={`#${experience.relatedProjectId}`}>
+                          Related work: {experience.relatedProjectLabel} <span aria-hidden="true">→</span>
+                        </a>
+                      )}
                     </div>
-                  </div>
-
-                  <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-                    {exp.description.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                  </section>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
