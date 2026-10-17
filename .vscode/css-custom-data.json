@@ -1,0 +1,15 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@theme",
+      "description": "Defines Tailwind CSS 4 theme tokens. The inline option resolves token values where utilities are used.",
+      "references": [
+        {
+          "name": "Tailwind CSS theme variables",
+          "url": "https://tailwindcss.com/docs/theme"
+        }
+      ]
+    }
+  ]
+}
