@@ -51,6 +51,7 @@ export const featuredProjects: WorkProject[] = [
     outcome: 'Replaced repeated per-step joins with precomputed neighbour information to improve feature-generation efficiency.',
     technologies: ['PySpark', 'Random walks', 'Graph connectivity'],
     visual: 'network',
+    caseStudyUrl: '/work/graph-analytics',
   },
   {
     id: 'nrc-spectral-analysis',
@@ -62,6 +63,7 @@ export const featuredProjects: WorkProject[] = [
     outcome: 'Evaluated PLS regression, neural networks, and extreme learning machines on the processed spectra.',
     technologies: ['Python', 'scikit-learn', 'LIBS', 'PLS regression'],
     visual: 'spectra',
+    caseStudyUrl: '/work/spectral-analysis',
   },
 
 ]

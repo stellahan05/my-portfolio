@@ -1,18 +1,19 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import GraphExplorer from './graph-explorer'
 import { additionalProjects, featuredProjects, type WorkProject } from '../data/projects'
 
 function ProjectLinks({ project }: { project: WorkProject }) {
   const links = [
-    { url: project.caseStudyUrl, label: `Read the ${project.title} case study` },
     { url: project.githubUrl, label: `${project.title} on GitHub` },
     { url: project.demoUrl, label: `Open the ${project.title} demo` },
   ].filter((link) => link.url)
 
-  if (!links.length) return null
+  if (!links.length && !project.caseStudyUrl) return null
 
   return (
     <div className="project-links">
+      {project.caseStudyUrl && <Link href={project.caseStudyUrl} aria-label={`Read case study: ${project.title}`}>Read case study <span aria-hidden="true">→</span></Link>}
       {links.map(({ url, label }) => (
         <a key={url} href={url} target="_blank" rel="noopener noreferrer">
           {label} <span aria-hidden="true">↗</span>
